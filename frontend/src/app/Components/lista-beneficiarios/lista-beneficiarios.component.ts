@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BeneficiarioService } from '../../services/beneficiario.service';
+import { BeneficiarioService } from '../../Services/beneficiario.service';
 import { Beneficiario } from '../../models/beneficiario.model';
 
 @Component({
@@ -13,8 +13,9 @@ export class ListaBeneficiariosComponent implements OnInit {
   constructor(private beneficiarioService: BeneficiarioService) {}
 
   ngOnInit(): void {
-    this.beneficiarioService.listar().subscribe(data => {
-      this.beneficiarios = data;
+    this.beneficiarioService.listar().subscribe({
+      next: (data) => this.beneficiarios = data,
+      error: (err) => console.error('Error al cargar beneficiarios:', err)
     });
   }
 }
