@@ -179,3 +179,22 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+# Ignorar archivos internos de Visual Studio
+.vs/
+*.suo
+*.user
+*.sln.docstates
+
+# Ignorar entornos virtuales
+env/
+venv/
+
+# Ignorar cachés de Python
+__pycache__/
+*.py[cod]
+
+# Ignorar archivos de base de datos y configuración local
+*.sqlite
+*.db
+*.log
+*.env
