@@ -1,11 +1,3 @@
-from pydantic import BaseModel
-
-class BeneficiarioCreate(BaseModel):
-    nombre: str
-    DNI: str
-    edad: int
-    direccion: str
-
 from pydantic import BaseModel, Field
 
 class BeneficiarioCreate(BaseModel):
@@ -13,3 +5,10 @@ class BeneficiarioCreate(BaseModel):
     DNI: str = Field(..., min_length=8, max_length=8)
     edad: int = Field(..., gt=0)
     direccion: str = Field(..., min_length=1)
+
+class BeneficiarioOut(BaseModel):
+    id: int
+    nombre: str
+    DNI: str
+    edad: int
+    direccion: str
