@@ -1,0 +1,21 @@
+<h2>Lista de Beneficiarios</h2>
+<table border="1" cellpadding="8">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>DNI</th>
+      <th>Edad</th>
+      <th>Dirección</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let b of beneficiarios">
+      <td>{{ b.id }}</td>
+      <td>{{ b.nombre }}</td>
+      <td>{{ b.DNI }}</td>
+      <td>{{ b.edad }}</td>
+      <td>{{ b.direccion }}</td>
+    </tr>
+  </tbody>
+</table>
