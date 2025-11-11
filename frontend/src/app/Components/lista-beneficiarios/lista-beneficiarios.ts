@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-lista-beneficiarios',
-  imports: [],
+  standalone: false,
   templateUrl: './lista-beneficiarios.html',
   styleUrl: './lista-beneficiarios.css',
 })
