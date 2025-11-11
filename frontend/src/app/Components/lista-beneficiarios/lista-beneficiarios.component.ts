@@ -1,21 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { BeneficiarioService } from '../../Services/beneficiario.service';
-import { Beneficiario } from '../../models/beneficiario.model';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-lista-beneficiarios',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './lista-beneficiarios.component.html',
   styleUrls: ['./lista-beneficiarios.component.css']
 })
-export class ListaBeneficiariosComponent implements OnInit {
-  beneficiarios: Beneficiario[] = [];
+export class ListaBeneficiariosComponent { }
 
-  constructor(private beneficiarioService: BeneficiarioService) {}
-
-  ngOnInit(): void {
-    this.beneficiarioService.listar().subscribe({
-      next: (data) => this.beneficiarios = data,
-      error: (err) => console.error('Error al cargar beneficiarios:', err)
-    });
-  }
-}
