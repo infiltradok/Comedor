@@ -4,3 +4,9 @@ export interface Beneficiario {
   edad: number;
   direccion: string;
 }
+export interface Beneficiario {
+  nombre: string;
+  edad: number;
+  miembros: number;
+  racion_por_persona: number;
+}
