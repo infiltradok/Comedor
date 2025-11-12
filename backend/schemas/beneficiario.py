@@ -1,4 +1,5 @@
 from pydantic import BaseModel, Field
+from pydantic import BaseModel
 
 class BeneficiarioCreate(BaseModel):
     nombre: str = Field(..., min_length=1)
@@ -12,3 +13,14 @@ class BeneficiarioOut(BaseModel):
     DNI: str
     edad: int
     direccion: str
+
+
+
+class BeneficiarioSchema(BaseModel):
+    nombre: str
+    edad: int
+    miembros: int
+    racion_por_persona: float
+
+    class Config:
+        orm_mode = True

@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { ListaBeneficiarios } from './Components/lista-beneficiarios/lista-beneficiarios';
 import { FormularioBeneficiarios } from './Components/formulario-beneficiarios/formulario-beneficiarios';
+//import { BackendOverview } from './components/backend-overview/backend-overview';
 
 @NgModule({
   declarations: [
     App,
     ListaBeneficiarios,
-    FormularioBeneficiarios
+    FormularioBeneficiarios,
+    //BackendOverview
   ],
   imports: [
     BrowserModule,

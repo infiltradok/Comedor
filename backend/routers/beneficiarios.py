@@ -44,3 +44,51 @@ def crear_beneficiario(data: BeneficiarioCreate):
     conn.commit()
     conn.close()
     return {"mensaje": "Beneficiario registrado correctamente"}
+
+
+# Simulación de base de datos
+from fastapi import APIRouter, Depends, HTTPException
+from sqlalchemy.orm import Session
+from db import SessionLocal
+from models.beneficiario import Beneficiario
+from schemas.beneficiario import BeneficiarioSchema
+
+router = APIRouter(prefix="/beneficiarios", tags=["Beneficiarios"])
+
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
+
+@router.get("/")
+def listar(db: Session = Depends(get_db)):
+    return db.query(Beneficiario).all()
+
+@router.post("/")
+def crear(b: BeneficiarioSchema, db: Session = Depends(get_db)):
+    nuevo = Beneficiario(**b.dict())
+    db.add(nuevo)
+    db.commit()
+    db.refresh(nuevo)
+    return nuevo
+
+@router.put("/{id}")
+def editar(id: int, b: BeneficiarioSchema, db: Session = Depends(get_db)):
+    beneficiario = db.query(Beneficiario).filter(Beneficiario.id == id).first()
+    if not beneficiario:
+        raise HTTPException(status_code=404, detail="No encontrado")
+    for key, value in b.dict().items():
+        setattr(beneficiario, key, value)
+    db.commit()
+    return beneficiario
+
+@router.delete("/{id}")
+def eliminar(id: int, db: Session = Depends(get_db)):
+    beneficiario = db.query(Beneficiario).filter(Beneficiario.id == id).first()
+    if not beneficiario:
+        raise HTTPException(status_code=404, detail="No encontrado")
+    db.delete(beneficiario)
+    db.commit()
+    return {"mensaje": "Eliminado"}
