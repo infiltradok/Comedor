@@ -1,36 +1,36 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing-module';
 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { provideHttpClient } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing-module';
+import { App } from './app';
 
 // COMPONENTES
-import { AppComponent } from './app.component';
-import { ListaBeneficiariosComponent } from './Components/lista-beneficiarios/lista-beneficiarios.component';
-import { FormularioBeneficiariosComponent } from './Components/formulario-beneficiarios/formulario-beneficiarios.component';
-import { NavbarComponent } from './Components/shared/navbar/navbar.component';
+import { ListaBeneficiarios } from './Components/lista-beneficiarios/lista-beneficiarios';
+import { FormularioBeneficiarios } from './Components/formulario-beneficiarios/formulario-beneficiarios';
+import { Navbar } from './Components/shared/navbar/navbar';
+import { Inicio } from './Components/inicio/inicio';
+import { Sobre } from './Components/sobre/sobre';
+import { Historia } from './Components/historia/historia';
+import { Servicios } from './Components/servicios/servicios';
+import { Contacto } from './Components/contacto/contacto';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ListaBeneficiariosComponent,
-    FormularioBeneficiariosComponent,
-    NavbarComponent
+    App,
+    ListaBeneficiarios,
+    FormularioBeneficiarios,
+    Navbar,
+    Inicio,
+    Sobre,
+    Historia,
+    Servicios,
+    Contacto
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule
+    AppRoutingModule
   ],
-  providers: [
-    provideHttpClient()
-  ],
-  bootstrap: [AppComponent]
+  providers: [],
+  bootstrap: [App]
 })
-export class AppModule { }
-
-
-
-
+export class AppModule {}
