@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BackendOverview } from './backend-overview';
 
-describe('BackendOverview', () => {
-  let component: BackendOverview;
-  let fixture: ComponentFixture<BackendOverview>;
+describe('FormularioBeneficiarios', () => {
+  let component: FormularioBeneficiarios;
+  let fixture: ComponentFixture<FormularioBeneficiarios>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [BackendOverview]
+      declarations: [FormularioBeneficiarios]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BackendOverview);
+    fixture = TestBed.createComponent(FormularioBeneficiarios);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
