@@ -1,16 +1,15 @@
 from fastapi import FastAPI
 from app.db import crear_tablas
-from app.routers.beneficiario import router as beneficiario_router
+from app.routers import beneficiario
 
 app = FastAPI()
 
 @app.on_event("startup")
-def startup_event():
+def startup():
     crear_tablas()
 
-# Registrar routers
-app.include_router(beneficiario_router, prefix="/beneficiarios", tags=["Beneficiarios"])
+app.include_router(beneficiario.router)
 
 @app.get("/")
-def root():
-    return {"message": "API del Comedor funcionando correctamente"}
+def inicio():
+    return {"mensaje": "API del Comedor funcionando correctamente"}
