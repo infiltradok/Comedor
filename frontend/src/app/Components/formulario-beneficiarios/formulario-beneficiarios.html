@@ -1,1 +1,15 @@
-<p>formulario-beneficiarios works!</p>
+<div class="contenedor">
+  <h2>Registrar Beneficiario</h2>
+
+  <form [formGroup]="formulario" (ngSubmit)="guardar()">
+
+    <input type="text" placeholder="Nombre" formControlName="nombre" />
+    <input type="text" placeholder="Apellido" formControlName="apellido" />
+    <input type="text" placeholder="DNI" formControlName="dni" />
+    <input type="number" placeholder="Edad" formControlName="edad" />
+    <input type="text" placeholder="Dirección" formControlName="direccion" />
+
+    <button type="submit" [disabled]="formulario.invalid">Guardar</button>
+
+  </form>
+</div>

@@ -1,5 +1,5 @@
 export interface Beneficiario {
-  id?: number;        // opcional, porque el backend lo genera
+  id?: number;
   nombre: string;
   apellido: string;
   dni: string;

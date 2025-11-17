@@ -1,1 +1,23 @@
-<p>lista-beneficiarios works!</p>
+<h2>Lista de Beneficiarios</h2>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>DNI</th>
+    <th>Edad</th>
+    <th>Dirección</th>
+    <th>Acciones</th>
+  </tr>
+
+  <tr *ngFor="let b of lista">
+    <td>{{ b.nombre }}</td>
+    <td>{{ b.apellido }}</td>
+    <td>{{ b.dni }}</td>
+    <td>{{ b.edad }}</td>
+    <td>{{ b.direccion }}</td>
+    <td>
+      <button (click)="eliminar(b.id!)">Eliminar</button>
+    </td>
+  </tr>
+</table>
