@@ -1,22 +1,34 @@
-<section class="servicios-container">
-  <h1 class="titulo-servicios">Nuestros Servicios</h1>
+<div class="donacion-card">
+    <h2>Auxilia una Olla</h2>
+    <p>
+        Tu apoyo solidario permite seguir asistiendo a más ollas comunes y familias en situación vulnerable.
+    </p>
 
-  <div class="servicios-grid">
+    <form class="donacion-form">
+        <input type="text" placeholder="Nombre">
+        <input type="text" placeholder="Apellido">
+        <input type="text" placeholder="Documento de Identidad">
+        <input type="text" placeholder="Teléfono">
+        <input type="email" placeholder="Correo Electrónico">
 
-    <div class="card-servicio">
-      <h2>Servicio 1</h2>
-      <p>Descripción breve del primer servicio que ofrece el comedor.</p>
-    </div>
+        <label>Monto a donar:</label>
+        <div class="donacion-opciones">
+            <button type="button" class="opcion">S/ 60</button>
+            <button type="button" class="opcion activa">S/ 80</button>
+            <button type="button" class="opcion">S/ 100</button>
+        </div>
 
-    <div class="card-servicio">
-      <h2>Servicio 2</h2>
-      <p>Descripción breve del segundo servicio que ofrece el comedor.</p>
-    </div>
+        <div class="donacion-monto">
+            <span>S/</span>
+            <input type="number" placeholder="80.00">
+            <span>PEN</span>
+        </div>
 
-    <div class="card-servicio">
-      <h2>Servicio 3</h2>
-      <p>Descripción breve del tercer servicio disponible.</p>
-    </div>
+        <label class="checkbox">
+            <input type="checkbox">
+            Acepto los términos y condiciones
+        </label>
 
-  </div>
-</section>
+        <button type="submit" class="btn-donar">DONAR AHORA</button>
+    </form>
+</div>

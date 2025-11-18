@@ -1,0 +1,40 @@
+.inicio-contenedor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  margin: 30px auto;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  gap: 40px;
+}
+
+/* Texto */
+.inicio-texto {
+  width: 50%;
+}
+
+.inicio-texto h1 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.inicio-texto p {
+  font-size: 18px;
+  color: #444;
+}
+
+/* Imagen */
+.inicio-imagen {
+  width: 50%;
+}
+
+.inicio-imagen img {
+  width: 100%;
+  height: 300px; 
+  object-fit: cover;
+  border-radius: 12px;
+}
