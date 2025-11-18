@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { BeneficiariosService } from '../../services/beneficiarios';
-import { Beneficiario } from '../../models/beneficiario';
+import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-formulario-beneficiarios',
+  standalone: true,
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './formulario-beneficiarios.html',
   styleUrls: ['./formulario-beneficiarios.css']
 })
@@ -12,10 +13,7 @@ export class FormularioBeneficiariosComponent {
 
   formulario: FormGroup;
 
-  constructor(
-    private fb: FormBuilder,
-    private beneficiariosService: BeneficiariosService
-  ) {
+  constructor(private fb: FormBuilder) {
     this.formulario = this.fb.group({
       nombre: ['', Validators.required],
       apellido: ['', Validators.required],
@@ -26,17 +24,7 @@ export class FormularioBeneficiariosComponent {
   }
 
   guardar() {
-    if (this.formulario.valid) {
-      const beneficiario: Beneficiario = this.formulario.value;
-
-      this.beneficiariosService.crear(beneficiario).subscribe({
-        next: () => {
-          alert('Beneficiario registrado correctamente');
-          this.formulario.reset();
-        },
-        error: (err) => console.error(err)
-      });
-    }
+    console.log(this.formulario.value);
   }
 }
 

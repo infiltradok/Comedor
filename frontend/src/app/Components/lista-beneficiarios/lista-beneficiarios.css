@@ -1,0 +1,59 @@
+h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.table-container {
+  width: 90%;
+  margin: 20px auto;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ESTILO GENERAL DE TABLA */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+/* CABECERA */
+table th {
+  background-color: #005FCC;
+  color: white;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+}
+
+/* FILAS */
+table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  color: #333;
+}
+
+/* EFECTO HOVER */
+table tr:hover {
+  background-color: #f1f7ff;
+}
+
+/* BOTÓN ELIMINAR */
+button {
+  padding: 6px 14px;
+  border: none;
+  background-color: #e60026;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  background-color: #b3001d;
+}

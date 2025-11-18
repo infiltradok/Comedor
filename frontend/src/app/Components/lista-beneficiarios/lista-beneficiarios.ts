@@ -1,11 +1,17 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-lista-beneficiarios',
-  standalone: false,
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './lista-beneficiarios.html',
-  styleUrl: './lista-beneficiarios.css',
+  styleUrls: ['./lista-beneficiarios.css']
 })
 export class ListaBeneficiarios {
+  lista: any[] = [];
 
+  eliminar(id: number) {
+    console.log("Eliminar", id);
+  }
 }

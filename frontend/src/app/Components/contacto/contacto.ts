@@ -2,10 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-contacto',
-  standalone: false,
   templateUrl: './contacto.html',
-  styleUrl: './contacto.css',
+  styleUrls: ['./contacto.css']
 })
-export class Contacto {
-
-}
+export class Contacto {}
