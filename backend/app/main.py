@@ -1,8 +1,18 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from app.db import crear_tablas
 from app.routers import beneficiario
 
 app = FastAPI()
+
+# 🔥 CONFIGURACIÓN CORS (OBLIGATORIO PARA ANGULAR)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:4200"],  # Angular
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.on_event("startup")
 def startup():

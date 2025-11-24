@@ -6,5 +6,5 @@ class Beneficiario(SQLModel, table=True):
     nombre: str
     apellido: str
     dni: str
+    edad: int
     direccion: str
-    telefono: str
