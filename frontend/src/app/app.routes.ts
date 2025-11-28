@@ -5,7 +5,7 @@ import { FormularioBeneficiariosComponent } from './Components/formulario-benefi
 import { ListaBeneficiarios } from './Components/lista-beneficiarios/lista-beneficiarios';
 import { Sobre } from './Components/sobre/sobre';
 import { Historia } from './Components/historia/historia';
-import { Servicios } from './Components/servicios/servicios';
+import { ServiciosComponent } from './Components/servicios/servicios';
 import { Contacto } from './Components/contacto/contacto';
 
 export const routes: Routes = [
@@ -14,6 +14,6 @@ export const routes: Routes = [
   { path: 'lista', component: ListaBeneficiarios },
   { path: 'sobre', component: Sobre },
   { path: 'historia', component: Historia },
-  { path: 'servicios', component: Servicios },
+  { path: 'servicios', component: ServiciosComponent },
   { path: 'contacto', component: Contacto }
 ];

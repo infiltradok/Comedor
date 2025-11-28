@@ -23,3 +23,9 @@ app.include_router(beneficiario.router)
 @app.get("/")
 def inicio():
     return {"mensaje": "API del Comedor funcionando correctamente"}
+
+
+from app.routers import beneficiario, donacion
+
+app.include_router(beneficiario.router)
+app.include_router(donacion.router)
