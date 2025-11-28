@@ -1,11 +1,33 @@
+/* CONTENEDOR PRINCIPAL */
 .contenedor {
   max-width: 420px;
   margin: 40px auto;
   background: #ffffff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
+
+  animation: aparecer 0.6s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* EFECTO AL PASAR EL MOUSE POR LA TARJETA */
+.contenedor:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* ANIMACIÓN DE ENTRADA */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 h2 {
@@ -15,44 +37,68 @@ h2 {
   color: #333;
 }
 
-/* Inputs verticales */
+/* FORMULARIO */
 form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 16px;
 }
 
+/* INPUTS */
 input {
   padding: 12px;
   font-size: 15px;
   border: 1px solid #ccc;
   border-radius: 8px;
   outline: none;
-  transition: border-color 0.2s ease;
+  transition: 
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.2s ease;
 }
 
+/* EFECTO CUANDO PASAS EL MOUSE POR LOS INPUT */
+input:hover {
+  transform: scale(1.02);
+}
+
+/* EFECTO AL HACER CLICK */
 input:focus {
   border-color: #1976d2;
+  box-shadow: 0 0 8px rgba(25, 118, 210, 0.4);
 }
 
-/* Botón */
+/* BOTÓN */
 button {
-  margin-top: 15px;
+  margin-top: 18px;
   padding: 12px;
-  background-color: #1976d2;
+  background: linear-gradient(135deg, #1976d2, #0d47a1);
   color: white;
   font-size: 16px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background 0.2s ease;
+
+  transition: 
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.3s ease;
 }
 
+/* BOTÓN DESACTIVADO */
 button:disabled {
   background: #9bbad1;
   cursor: not-allowed;
+  box-shadow: none;
 }
 
+/* EFECTO AL PASAR EL MOUSE */
 button:hover:not(:disabled) {
-  background-color: #0d5aaa;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* EFECTO AL HACER CLICK */
+button:active:not(:disabled) {
+  transform: scale(0.97);
 }

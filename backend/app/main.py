@@ -29,3 +29,7 @@ from app.routers import beneficiario, donacion
 
 app.include_router(beneficiario.router)
 app.include_router(donacion.router)
+
+
+from app.routers import inscripcion
+app.include_router(inscripcion.router)

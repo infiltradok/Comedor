@@ -1,34 +1,58 @@
-.historia-container {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 20px;
-  display: flex;
-  gap: 40px;
-  align-items: center;
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+.timeline-container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 60px 20px;
 }
 
-.historia-imagen img {
-  width: 450px;
-  height: 350px;
-  object-fit: cover;
-  border-radius: 16px;
-}
-
-.historia-texto {
-  flex: 1;
-}
-
-.historia-texto h1 {
-  font-size: 36px;
+.timeline-title {
+  text-align: center;
+  font-size: 32px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
-.historia-texto p {
-  font-size: 18px;
-  line-height: 1.6;
+.timeline-subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 30px;
+  border-left: 4px solid #007bff;
+}
+
+.timeline-item {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.timeline-date {
+  position: absolute;
+  left: -75px;
+  background: #007bff;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.timeline-content {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+}
+
+.timeline-content h3 {
+  margin-top: 0;
+  color: #007bff;
+}
+
+.timeline-content p {
+  margin: 5px 0 0;
   color: #333;
+  line-height: 1.6;
 }

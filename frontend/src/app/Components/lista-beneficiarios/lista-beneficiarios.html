@@ -1,23 +1,35 @@
-<h2>Lista de Beneficiarios</h2>
+<h2 class="titulo">Lista de Donaciones</h2>
 
-<table>
-  <tr>
-    <th>Nombre</th>
-    <th>Apellido</th>
-    <th>DNI</th>
-    <th>Edad</th>
-    <th>Dirección</th>
-    <th>Acciones</th>
-  </tr>
+<!-- 🔵 TARJETAS DE RESUMEN -->
+<div class="resumen">
+  <div class="card">
+    <h3>Total Recaudado</h3>
+    <p>S/ {{ totalDonado }}</p>
+  </div>
 
-  <tr *ngFor="let b of lista">
-    <td>{{ b.nombre }}</td>
-    <td>{{ b.apellido }}</td>
-    <td>{{ b.dni }}</td>
-    <td>{{ b.edad }}</td>
-    <td>{{ b.direccion }}</td>
-    <td>
-      <button (click)="eliminar(b.id!)">Eliminar</button>
-    </td>
-  </tr>
+  <div class="card">
+    <h3>Total Donantes</h3>
+    <p>{{ totalDonantes }}</p>
+  </div>
+
+  <div class="card">
+    <h3>Mayor Donación</h3>
+    <p>S/ {{ mayorDonacion }}</p>
+  </div>
+</div>
+
+<!-- 🔵 TABLA COMPACTA -->
+<table class="tabla">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Monto (S/.)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let d of lista">
+      <td>{{ d.nombre }}</td>
+      <td>S/ {{ d.monto }}</td>
+    </tr>
+  </tbody>
 </table>
