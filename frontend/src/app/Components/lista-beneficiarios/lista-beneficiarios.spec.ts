@@ -1,23 +1,34 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component, OnInit } from '@angular/core';
+import { BeneficiariosService } from '../../services/beneficiarios';
+import { Beneficiario } from '../../models/beneficiario';
 
-import { ListaBeneficiarios } from './lista-beneficiarios';
+@Component({
+  selector: 'app-lista-beneficiarios',
+  templateUrl: './lista-beneficiarios.html',
+  styleUrls: ['./lista-beneficiarios.css']
+})
+export class ListaBeneficiariosComponent implements OnInit {
 
-describe('ListaBeneficiarios', () => {
-  let component: ListaBeneficiarios;
-  let fixture: ComponentFixture<ListaBeneficiarios>;
+  lista: Beneficiario[] = [];
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ListaBeneficiarios]
-    })
-    .compileComponents();
+  constructor(private beneficiariosService: BeneficiariosService) {}
 
-    fixture = TestBed.createComponent(ListaBeneficiarios);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  ngOnInit(): void {
+    this.cargar();
+  }
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+  cargar() {
+    this.beneficiariosService.listar().subscribe({
+      next: data => this.lista = data,
+      error: err => console.log(err)
+    });
+  }
+
+  eliminar(id: number) {
+    if (confirm('¿Eliminar beneficiario?')) {
+      this.beneficiariosService.eliminar(id).subscribe(() => {
+        this.cargar();
+      });
+    }
+  }
+}

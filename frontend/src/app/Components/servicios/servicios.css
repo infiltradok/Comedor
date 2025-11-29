@@ -1,0 +1,96 @@
+/* TARJETA DE DONACIÓN */
+.donacion-card {
+    background: #f5f7fa;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 600px;
+    margin: 40px auto;
+    text-align: center;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.donacion-card h2 {
+    color: #1f2937;
+    margin-bottom: 10px;
+}
+
+.donacion-card p {
+    color: #4b5563;
+    margin-bottom: 25px;
+}
+
+/* FORMULARIO */
+.donacion-form input,
+.donacion-monto input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    font-size: 15px;
+}
+
+.donacion-opciones {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.opcion {
+    padding: 10px 20px;
+    border: 1px solid #cbd5e1;
+    background: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.opcion:hover {
+    background: #e5e7eb;
+}
+
+.opcion.activa {
+    background: #f97316;
+    color: white;
+    border-color: #f97316;
+}
+
+/* MONTO MANUAL */
+.donacion-monto {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.donacion-monto span {
+    font-weight: bold;
+}
+
+/* CHECKBOX */
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 12px 0;
+}
+
+/* BOTÓN DONAR */
+.btn-donar {
+    background: #f97316;
+    color: white;
+    padding: 14px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-donar:hover {
+    background: #ea580c;
+}

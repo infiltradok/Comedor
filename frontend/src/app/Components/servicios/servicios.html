@@ -1,0 +1,76 @@
+<div class="donacion-card">
+  <h2>Auxilia una Olla</h2>
+  <p>
+    Tu apoyo solidario permite seguir asistiendo a más ollas comunes y familias en situación vulnerable.
+  </p>
+
+  <form class="donacion-form" (ngSubmit)="donar()">
+
+    <input type="text"
+           placeholder="Nombre"
+           [(ngModel)]="donacion.nombre"
+           name="nombre"
+           required>
+
+    <input type="text"
+           placeholder="Apellido"
+           [(ngModel)]="donacion.apellido"
+           name="apellido"
+           required>
+
+    <input type="text"
+           placeholder="Documento de Identidad"
+           [(ngModel)]="donacion.documento_identidad"
+           name="documento_identidad"
+           required>
+
+    <input type="text"
+           placeholder="Teléfono"
+           [(ngModel)]="donacion.telefono"
+           name="telefono"
+           required>
+
+    <input type="email"
+           placeholder="Correo Electrónico"
+           [(ngModel)]="donacion.correo"
+           name="correo"
+           required>
+
+    <label>Monto a donar:</label>
+
+    <div class="donacion-opciones">
+      <button type="button"
+              class="opcion"
+              (click)="seleccionarMonto(60)">S/ 60</button>
+
+      <button type="button"
+              class="opcion activa"
+              (click)="seleccionarMonto(80)">S/ 80</button>
+
+      <button type="button"
+              class="opcion"
+              (click)="seleccionarMonto(100)">S/ 100</button>
+    </div>
+
+    <div class="donacion-monto">
+      <span>S/</span>
+      <input type="number"
+             [(ngModel)]="donacion.monto"
+             name="monto"
+             required>
+      <span>PEN</span>
+    </div>
+
+    <label class="checkbox">
+      <input type="checkbox"
+             [(ngModel)]="donacion.acepta_terminos"
+             name="acepta_terminos">
+      Acepto los términos y condiciones
+    </label>
+
+    <button type="submit" class="btn-donar">
+      DONAR AHORA
+    </button>
+
+  </form>
+</div>
