@@ -1,1 +1,35 @@
-<p>lista-beneficiarios works!</p>
+<h2 class="titulo">Lista de Donaciones</h2>
+
+<!-- 🔵 TARJETAS DE RESUMEN -->
+<div class="resumen">
+  <div class="card">
+    <h3>Total Recaudado</h3>
+    <p>S/ {{ totalDonado }}</p>
+  </div>
+
+  <div class="card">
+    <h3>Total Donantes</h3>
+    <p>{{ totalDonantes }}</p>
+  </div>
+
+  <div class="card">
+    <h3>Mayor Donación</h3>
+    <p>S/ {{ mayorDonacion }}</p>
+  </div>
+</div>
+
+<!-- 🔵 TABLA COMPACTA -->
+<table class="tabla">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Monto (S/.)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let d of lista">
+      <td>{{ d.nombre }}</td>
+      <td>S/ {{ d.monto }}</td>
+    </tr>
+  </tbody>
+</table>

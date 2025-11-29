@@ -1,0 +1,56 @@
+<div class="contact-container">
+  <h1 class="title">Formulario de Inscripción al Comedor Popular</h1>
+
+  <p>
+    Complete este formulario para solicitar la inscripción al Comedor Popular.
+    La información proporcionada será utilizada únicamente para fines de evaluación social.
+  </p>
+
+  <form class="contact-form" (ngSubmit)="enviarSolicitud()">
+
+    <!-- NOMBRE -->
+    <label>Nombre completo <span class="obligatorio">(obligatorio)</span></label>
+    <input type="text"
+           placeholder="Ingrese su nombre completo"
+           [(ngModel)]="inscripcion.nombre_completo"
+           name="nombre_completo"
+           required />
+
+    <!-- CORREO -->
+    <label>Correo electrónico <span class="obligatorio">(obligatorio)</span></label>
+    <input type="email"
+           placeholder="correo@ejemplo.com"
+           [(ngModel)]="inscripcion.correo"
+           name="correo"
+           required />
+
+    <!-- TELÉFONO -->
+    <label>Teléfono de contacto</label>
+    <input type="text"
+           placeholder="Número de teléfono"
+           [(ngModel)]="inscripcion.telefono"
+           name="telefono" />
+
+    <!-- TIPO DE SOLICITANTE -->
+    <label>Tipo de solicitante</label>
+    <select [(ngModel)]="inscripcion.tipo_solicitante"
+            name="tipo_solicitante">
+      <option value="">Seleccionar una opción</option>
+      <option>Madre de familia</option>
+      <option>Padre de familia</option>
+      <option>Adulto mayor</option>
+      <option>Persona en situación vulnerable</option>
+      <option>Otro</option>
+    </select>
+
+    <!-- DETALLES SOCIALES -->
+    <label>Breve descripción de su situación</label>
+    <textarea [(ngModel)]="inscripcion.descripcion"
+              name="descripcion"
+              placeholder="Describa brevemente su situación familiar o necesidad alimentaria...">
+    </textarea>
+
+    <button type="submit" class="btn-enviar">Enviar Solicitud</button>
+
+  </form>
+</div>
